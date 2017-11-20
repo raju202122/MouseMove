@@ -11,23 +11,23 @@ public class MouseMove {
 	public static void main(String[] args) throws AWTException, InterruptedException {
 		System.out.println("START");
 		Robot robot = new Robot();
-		
-		while(true){
+
+		while (true) {
 			PointerInfo pointerInfo = MouseInfo.getPointerInfo();
-			if(pointerInfo != null){
+			if (pointerInfo != null) {
 				Point location = pointerInfo.getLocation();
-				int x = (int)location.getX();
-				int y = (int)location.getY();
-				System.out.println("@ "+new Date());
-				System.out.println("-- Before :: x="+x);
-				
+				int x = (int) location.getX();
+				int y = (int) location.getY();
+				System.out.println("@ " + new Date());
+				System.out.println("-- Before :: x=" + x);
+
 				robot.mouseMove(++x, y);
-				System.out.println("-- After :: x="+x);
-				
-			}else {
-				System.out.println("pointerInfo is null @ "+new Date());
+				System.out.println("-- After :: x=" + x);
+
+			} else {
+				System.out.println("pointerInfo is null @ " + new Date());
 			}
-			Thread.sleep(1000*60*3);
+			Thread.sleep(1000 * 60 * 3);
 			System.out.println("================================");
 		}
 	}
